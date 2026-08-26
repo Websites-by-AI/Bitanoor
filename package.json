@@ -1,0 +1,32 @@
+{
+  "name": "bitanoor-electric",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "15.5.9",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "leaflet": "^1.9.4",
+    "drizzle-orm": "^0.30.0",
+    "@cloudflare/workers-types": "^4.20240418.0",
+    "lucide-react": "^0.344.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/leaflet": "^1.9.8",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "15.5.9",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.3.0"
+  }
+}
