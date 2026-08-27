@@ -25,7 +25,7 @@ export interface User {
 // Seller types
 export type LeadPriority = "P1" | "P2" | "P3";
 export type SellerType = "manufacturer" | "distributor" | "assembler" | "importer";
-export type ProductionType = "outdoor" | "indoor" | "industrial" | "decorative" | "smart" | "solar" | "commercial";
+export type ProductionType = "outdoor" | "indoor" | "industrial" | "decorative" | "smart" | "solar" | "commercial" | "garden";
 export type VoltageClass = "low" | "medium" | "high" | "very_high";
 
 export interface Location {
@@ -232,26 +232,3 @@ export interface PaginatedResponse<T> {
   pageSize: number;
   totalPages: number;
 }
-
-// Export all types
-export type {
-  UserRole,
-  User,
-  LeadPriority,
-  SellerType,
-  ProductionType,
-  VoltageClass,
-  Location,
-  ContactInfo,
-  Seller,
-  ProductSpecs,
-  Product,
-  ProductCategory,
-  Lead,
-  Message,
-  TelegramUpdate,
-  ApiResponse,
-  SellerFilters,
-  ProductFilters,
-  PaginatedResponse,
-};

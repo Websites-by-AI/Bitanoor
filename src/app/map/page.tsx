@@ -18,9 +18,9 @@ export default function MapPage() {
     productionType: "" as const,
     country: "",
     catalogOnly: false,
-    scope: "" as const,
+    scope: "" as "" | "iran" | "world",
   });
-  const [selectedSeller, setSelectedSeller] = useState(null);
+  const [selectedSeller, setSelectedSeller] = useState<any>(null);
   const [viewMode, setViewMode] = useState<"map" | "list" | "both">("both");
 
   const filteredSellers = useMemo(() => {
@@ -321,7 +321,7 @@ export default function MapPage() {
                 <div>
                   <h3 className="font-medium text-gray-700">محصولات</h3>
                   <div className="flex flex-wrap gap-2 mt-2">
-                    {selectedSeller.products.map((product) => (
+                    {selectedSeller.products.map((product: string) => (
                       <span
                         key={product}
                         className="text-sm bg-gray-100 text-gray-700 px-3 py-1 rounded-full"

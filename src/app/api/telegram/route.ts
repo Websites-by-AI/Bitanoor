@@ -266,7 +266,7 @@ export async function POST(request: NextRequest) {
         mapText += `📌 **۱۰ شرکت برتر:**\n\n`;
         
         topSellers.forEach((seller, index) => {
-          mapText += `${index + 1}. **${seller.name}** (${seller.city})\n`;
+          mapText += `${index + 1}. **${seller.name}** (${seller.location.city})\n`;
           mapText += `   ⭐ ${seller.rating}/5 | 📞 ${seller.contact.phone}\n`;
           mapText += `   💰 قیمت/لومن: ${seller.samplePricePerLumen.toLocaleString()} IRR\n\n`;
         });
@@ -491,7 +491,7 @@ ${process.env.NEXT_PUBLIC_SITE_URL || "https://bitanoor-electric.pages.dev"}/das
           const iranSellers = allSellers.filter((s) => s.country === "ایران");
           let iranText = `🇮🇷 **فروشندگان ایرانی**\n\n`;
           iranSellers.slice(0, 10).forEach((seller, index) => {
-            iranText += `${index + 1}. **${seller.name}** (${seller.city})\n`;
+            iranText += `${index + 1}. **${seller.name}** (${seller.location.city})\n`;
           });
           await sendTelegramMessage(chatId, iranText);
           break;

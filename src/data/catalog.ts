@@ -73,60 +73,6 @@ export const productCategories: ProductCategory[] = [
   },
 ];
 
-// Product interface
-export interface Product {
-  id: string;
-  name: string;
-  nameEn: string;
-  description: string;
-  descriptionEn: string;
-  categoryId: string;
-  sellerId: string;
-  specs: ProductSpecs;
-  price: number; // IRR
-  priceUsd?: number; // USD
-  currency: string;
-  images: string[];
-  rating: number;
-  reviewCount: number;
-  stock: number;
-  isNew: boolean;
-  isFeatured: boolean;
-  isAvailable: boolean;
-  warranty: string;
-  tags: string[];
-  createdAt: string;
-}
-
-export interface ProductSpecs {
-  wattage: number; // W
-  lumen: number; // lm
-  colorTemperature: number; // K
-  color: string;
-  colorEn: string;
-  material: string;
-  materialEn: string;
-  ipRating: string;
-  voltage: string;
-  lifespan: string;
-  dimensions: {
-    length?: number;
-    width?: number;
-    height?: number;
-    unit: string;
-  };
-  weight: number; // kg
-  certification: string[];
-}
-
-export interface ProductCategory {
-  id: string;
-  name: string;
-  nameEn: string;
-  description: string;
-  descriptionEn: string;
-  icon: string;
-}
 
 // Sample products for Bitanoor Electric
 export const products: Product[] = [
@@ -615,5 +561,3 @@ export function getProductsBySeller(sellerId: string, limit: number = 20) {
     .slice(0, limit);
 }
 
-// Export types for use in other files
-export type { Product, ProductCategory, ProductSpecs };

@@ -37,14 +37,18 @@ interface MapViewerProps {
 }
 
 export default function MapViewer({ sellers }: MapViewerProps) {
-  const mapRef = useRef<L.Map | null>(null);
+  const mapRef = useRef<HTMLDivElement>(null);
+  const mapInstanceRef = useRef<L.Map | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     // Initialize map
-    const map = L.map(mapRef.current as HTMLElement, {
+    const mapContainer = mapRef.current;
+    if (!mapContainer) return;
+    
+    const map = L.map(mapContainer, {
       center: [32.4279, 53.6880], // Center of Iran
       zoom: 5,
       minZoom: 4,
@@ -102,7 +106,7 @@ export default function MapViewer({ sellers }: MapViewerProps) {
     });
 
     // Store map reference
-    mapRef.current = map;
+    mapInstanceRef.current = map;
     setIsLoaded(true);
 
     // Cleanup

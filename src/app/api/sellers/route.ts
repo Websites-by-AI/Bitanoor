@@ -4,7 +4,8 @@
  */
 
 import { NextRequest, NextResponse } from "next/server";
-import { allSellers, getFilteredSellers, sellerFilters } from "@/data/sellers";
+import { allSellers, getFilteredSellers } from "@/data/sellers";
+import { SellerType, ProductionType } from "@/types";
 
 // GET /api/sellers - Get filtered list of sellers
 export async function GET(request: NextRequest) {
@@ -13,11 +14,11 @@ export async function GET(request: NextRequest) {
     
     // Extract filter parameters
     const query = searchParams.get("q") || "";
-    const type = searchParams.get("type") as sellerFilters["type"] || "";
-    const productionType = searchParams.get("productionType") as sellerFilters["productionType"] || "";
+    const type = searchParams.get("type") as SellerType | "" || "";
+    const productionType = searchParams.get("productionType") as ProductionType | "" || "";
     const country = searchParams.get("country") || "";
     const catalogOnly = searchParams.get("catalog") === "true";
-    const scope = searchParams.get("scope") as "iran" | "world" | "" || "";
+    const scope = (searchParams.get("scope") as "iran" | "world" | "") || "";
     const format = searchParams.get("format") || "json";
     const limit = parseInt(searchParams.get("limit") || "50");
     

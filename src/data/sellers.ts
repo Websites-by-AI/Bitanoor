@@ -3,55 +3,8 @@
  * List of electric lamp manufacturers and suppliers in Iran
  */
 
-import { Seller } from "@/types";
+import { Seller, SellerType, ProductionType, LeadPriority, VoltageClass } from "@/types";
 
-// Priority levels for leads
-export type LeadPriority = "P1" | "P2" | "P3";
-
-// Seller type
-export type SellerType = "manufacturer" | "distributor" | "assembler" | "importer";
-
-// Production type for lighting
-export type ProductionType = "outdoor" | "indoor" | "industrial" | "decorative" | "smart" | "solar" | "commercial";
-
-// Voltage classes for lighting products
-export type VoltageClass = "low" | "medium" | "high" | "very_high";
-
-export interface Seller {
-  id: string;
-  name: string;
-  nameEn: string;
-  description: string;
-  descriptionEn: string;
-  type: SellerType;
-  productionTypes: ProductionType[];
-  location: {
-    city: string;
-    cityEn: string;
-    address: string;
-    addressEn: string;
-    lat: number;
-    lng: number;
-  };
-  contact: {
-    phone: string;
-    email: string;
-    website?: string;
-    telegram?: string;
-  };
-  products: string[];
-  catalogAvailable: boolean;
-  leadPriority: LeadPriority;
-  rating: number;
-  reviewCount: number;
-  samplePricePerLumen: number; // IRR per lumen
-  unitCostEstimate: number; // IRR
-  bulkSavingPercent: number; // %
-  isVerified: boolean;
-  isFeatured: boolean;
-  country: string;
-  countryEn: string;
-}
 
 // Sample data for Iranian lighting manufacturers
 export const iranianSellers: Seller[] = [

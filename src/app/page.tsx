@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { LayoutDashboard, Map, Catalog, MessageSquare, Users, Sparkles } from "lucide-react";
+import { LayoutDashboard, Map, Package, MessageSquare, Users, Sparkles } from "lucide-react";
 
 export default function Home() {
   return (
@@ -48,7 +48,7 @@ export default function Home() {
                 مشاهده نقشه
               </Link>
               <Link href="/catalog" className="btn btn-primary text-lg px-8 py-3">
-                <Catalog className="ml-2 w-5 h-5" />
+                <Package className="ml-2 w-5 h-5" />
                 کاتالوگ محصولات
               </Link>
             </div>
@@ -83,11 +83,11 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Catalog Module */}
+            {/* Package Module */}
             <div className="card p-6">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                  <Catalog className="w-6 h-6 text-green-600" />
+                  <Package className="w-6 h-6 text-green-600" />
                 </div>
                 <h3 className="text-lg font-semibold mr-4">کاتالوگ محصولات</h3>
               </div>

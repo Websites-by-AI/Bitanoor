@@ -4,26 +4,7 @@
  */
 
 import { User, UserRole } from "@/types";
-
-// User role types
-export type UserRole = "admin" | "seller" | "buyer" | "customer" | "marketer";
-
-// User interface
-export interface User {
-  id: string;
-  phone: string;
-  password: string; // In production, use hashed passwords
-  name: string;
-  company?: string;
-  city?: string;
-  role: UserRole;
-  email?: string;
-  avatar?: string;
-  createdAt: string;
-  lastLogin?: string;
-  isActive: boolean;
-  isVerified: boolean;
-}
+export type { UserRole };
 
 // Demo accounts for testing
 export const demoAccounts: User[] = [
@@ -171,5 +152,4 @@ export const dashboardLabels: Record<UserRole, { fa: string; en: string }> = {
   marketer: { fa: "داشبورد بازاریاب", en: "Marketer Dashboard" },
 };
 
-// Export types
-export type { User };
+

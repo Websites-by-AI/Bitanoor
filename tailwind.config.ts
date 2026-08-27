@@ -47,7 +47,6 @@ const config: Config = {
   },
   plugins: [],
   darkMode: "class",
-  direction: "rtl",
 };
 
 export default config;
