@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   
   // Output for Cloudflare Pages
-  output: "standalone",
+  output: "export",
   
   // Image optimization
   images: {
