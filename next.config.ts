@@ -4,9 +4,6 @@ const nextConfig: NextConfig = {
   // Enable React Strict Mode
   reactStrictMode: true,
   
-  // Output for Cloudflare Pages
-  output: "export",
-  
   // Image optimization
   images: {
     unoptimized: true,
